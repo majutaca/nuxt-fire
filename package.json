@@ -1,8 +1,8 @@
 {
   "name": "nuxt-fire",
-  "version": "1.0.0",
-  "description": "My new Nuxt module",
-  "repository": "your-org/my-module",
+  "version": "0.1.0",
+  "description": "Simplify Firebase integration with this Nuxt module - no need to write complex configuration or boilerplate code.",
+  "repository": "majutaca/nuxt-fire",
   "license": "MIT",
   "type": "module",
   "exports": {
