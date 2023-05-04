@@ -1,6 +1,6 @@
 {
   "name": "nuxt3-fire",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Simplify Firebase integration with this Nuxt module - no need to write complex configuration or boilerplate code.",
   "repository": "majutaca/nuxt3-fire",
   "license": "MIT",
