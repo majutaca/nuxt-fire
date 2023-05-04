@@ -12,8 +12,8 @@ import {getAnalytics, setAnalyticsCollectionEnabled} from "firebase/analytics";
  */
 export default defineNuxtPlugin(() => {
   const appConfig = useAppConfig()
-  console.log('App Init Config', appConfig.firebaseConfig)
 
+  // App
   const firebaseApp = initializeApp(appConfig.firebaseConfig)
 
   // Auth
