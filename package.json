@@ -1,6 +1,6 @@
 {
   "name": "@nuxt/fire",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Simplify Firebase integration with this Nuxt module - no need to write complex configuration or boilerplate code.",
   "repository": "majutaca/nuxt-fire",
   "license": "MIT",
@@ -22,7 +22,7 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
-    "release": "yarn lint && yarn test && yarn prepack && changelogen --release && yarn publish && git push --follow-tags",
+    "release": "yarn lint && yarn test && yarn prepack && changelogen --release && yarn npm publish && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest watch"
