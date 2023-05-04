@@ -57,6 +57,7 @@ export default defineNuxtModule<ModuleOptions>({
     addPlugin(resolve('./runtime/firestore/plugin.client'))
     addPlugin(resolve('./runtime/database/plugin.client'))
     addPlugin(resolve('./runtime/storage/plugin.client'))
+    addPlugin(resolve('./runtime/functions/plugin.client'))
 
     // Import composables
     addImports([
@@ -83,6 +84,10 @@ export default defineNuxtModule<ModuleOptions>({
       {
         from: resolve('./runtime/storage/composables'),
         name: 'useStorage'
+      },
+      {
+        from: resolve('./runtime/functions/composables'),
+        name: 'useFunctions'
       }
     ])
   }
