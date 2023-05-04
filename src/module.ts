@@ -1,5 +1,5 @@
-import { defineNuxtModule, addPlugin, createResolver, addImports } from '@nuxt/kit'
-//import type { FirebaseOptions } from 'firebase/app'
+import { defineNuxtModule, addPlugin, createResolver, addImportsDir } from '@nuxt/kit'
+//import type { FirebaseOptions } from 'firebase/firebase'
 import { markRaw } from 'vue'
 
 type EmulatorConfigParam = {
@@ -48,47 +48,13 @@ export default defineNuxtModule<ModuleOptions>({
       nuxt.options.appConfig.analyticsEnabled = options.analyticsEnabled
     }
 
-    nuxt.options.build.transpile.push(runtimeDir)
+    //nuxt.options.build.transpile.push(runtimeDir)
 
     // Add the plugins
-    addPlugin(resolve('./runtime/app/plugin.client'))
-    addPlugin(resolve('./runtime/analytics/plugin.client'))
-    addPlugin(resolve('./runtime/auth/plugin.client'))
-    addPlugin(resolve('./runtime/firestore/plugin.client'))
-    addPlugin(resolve('./runtime/database/plugin.client'))
-    addPlugin(resolve('./runtime/storage/plugin.client'))
-    addPlugin(resolve('./runtime/functions/plugin.client'))
+    addPlugin(resolve('./runtime/firebase/plugin.client'))
 
     // Import composables
-    addImports([
-      {
-        from: resolve('./runtime/app/composables'),
-        name: 'useFirebaseApp'
-      },
-      {
-        from: resolve('./runtime/analytics/composables'),
-        name: 'useAnalytics'
-      },
-      {
-        from: resolve('./runtime/auth/composables'),
-        name: 'useAuth'
-      },
-      {
-        from: resolve('./runtime/firestore/composables'),
-        name: 'useFirestore'
-      },
-      {
-        from: resolve('./runtime/database/composables'),
-        name: 'useDatabase'
-      },
-      {
-        from: resolve('./runtime/storage/composables'),
-        name: 'useStorage'
-      },
-      {
-        from: resolve('./runtime/functions/composables'),
-        name: 'useFunctions'
-      }
-    ])
+    addImportsDir(runtimeDir + '/firebase/composables')
+
   }
 })

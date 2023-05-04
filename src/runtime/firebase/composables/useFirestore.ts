@@ -1,4 +1,4 @@
 import type { Firestore } from 'firebase/firestore'
 import { useNuxtApp } from '#app'
 
-export const useFirestore = (): Firestore => useNuxtApp().$firestore
+export const useFirestore = (): Firestore => useNuxtApp().$firestore as Firestore

@@ -1,4 +1,4 @@
 import type { Analytics } from 'firebase/analytics'
 import { useNuxtApp } from '#app'
 
-export const useAnalytics = (): Analytics => useNuxtApp().$analytics
+export const useAnalytics = (): Analytics => useNuxtApp().$analytics as Analytics
