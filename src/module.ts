@@ -1,5 +1,5 @@
 import { defineNuxtModule, addPlugin, createResolver, addImports } from '@nuxt/kit'
-import type { FirebaseOptions } from 'firebase/app'
+//import type { FirebaseOptions } from 'firebase/app'
 import { markRaw } from 'vue'
 
 type EmulatorConfigParam = {
@@ -16,13 +16,15 @@ type FirebaseEmulatorConfig = {
 }
 // Module options TypeScript interface definition
 export interface ModuleOptions {
-  config?: FirebaseOptions,
-  emulatorConfig?: FirebaseEmulatorConfig
+  //config?: FirebaseOptions,
+  config?: any,
+  emulatorConfig?: FirebaseEmulatorConfig,
+  analyticsEnabled?: boolean,
 }
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'nuxt-fire',
+    name: 'nuxt3-fire',
     configKey: 'nuxtFire',
     compatibility: {
       nuxt: '>=3.0.0'
@@ -41,6 +43,9 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.appConfig.firebaseConfig = markRaw(options.config)
     if (options.emulatorConfig) {
       nuxt.options.appConfig.emulatorConfig = markRaw(options.emulatorConfig)
+    }
+    if (options.analyticsEnabled) {
+      nuxt.options.appConfig.analyticsEnabled = options.analyticsEnabled
     }
 
     nuxt.options.build.transpile.push(runtimeDir)

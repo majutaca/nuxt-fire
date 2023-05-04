@@ -3,7 +3,7 @@ Get your module up and running quickly.
 
 Find and replace all on all files (CMD+SHIFT+F):
 - Name: NuxtFire
-- Package name: nuxt-fire
+- Package name: nuxt3-fire
 - Description: My new Nuxt module
 -->
 
@@ -17,7 +17,7 @@ Find and replace all on all files (CMD+SHIFT+F):
 My new Nuxt module for doing amazing things.
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt-fire?file=playground%2Fapp.vue) -->
+<!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt3-fire?file=playground%2Fapp.vue) -->
 <!-- - [📖 &nbsp;Documentation](https://example.com) -->
 
 ## Features
@@ -29,26 +29,49 @@ My new Nuxt module for doing amazing things.
 
 ## Quick Setup
 
-1. Add `nuxt-fire` dependency to your project
+1. Add `nuxt3-fire` dependency to your project
 
 ```bash
 # Using pnpm
-pnpm add -D nuxt-fire
+pnpm add -D nuxt3-fire
 
 # Using yarn
-yarn add --dev nuxt-fire
+yarn add --dev nuxt3-fire
 
 # Using npm
-npm install --save-dev nuxt-fire
+npm install --save-dev nuxt3-fire
 ```
 
-2. Add `nuxt-fire` to the `modules` section of `nuxt.config.ts`
+2. Add `nuxt3-fire` to the `modules` section of `nuxt.config.ts`
 
 ```js
 export default defineNuxtConfig({
   modules: [
-    'nuxt-fire'
-  ]
+    'nuxt3-fire'
+  ],
+  nuxtFire: {
+    // Your Firebase project config, obtained from the Firebase console
+    config: {
+      apiKey: '',
+      authDomain: '',
+      databaseURL: '',
+      projectId: '',
+      storageBucket: '',
+      messagingSenderId: '',
+      appId: '',
+      measurementId: ''
+    },
+    // Optionally specify emulator config in development mode
+    emulatorConfig: {
+        auth: { host: 'localhost', port: 9099 },
+        firestore: { host: 'localhost', port: 8080 },
+        functions: { host: 'localhost', port: 5001 },
+        storage: { host: 'localhost', port: 9199 },
+        database: { host: 'localhost', port: 9000 }
+    },
+    // Optionally enable analytics (default: false), only in production mode
+    analyticsEnabled: true
+  }
 })
 ```
 
@@ -81,14 +104,14 @@ npm run release
 ```
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/nuxt-fire/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
-[npm-version-href]: https://npmjs.com/package/nuxt-fire
+[npm-version-src]: https://img.shields.io/npm/v/nuxt3-fire/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-version-href]: https://npmjs.com/package/nuxt3-fire
 
-[npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-fire.svg?style=flat&colorA=18181B&colorB=28CF8D
-[npm-downloads-href]: https://npmjs.com/package/nuxt-fire
+[npm-downloads-src]: https://img.shields.io/npm/dm/nuxt3-fire.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-downloads-href]: https://npmjs.com/package/nuxt3-fire
 
-[license-src]: https://img.shields.io/npm/l/nuxt-fire.svg?style=flat&colorA=18181B&colorB=28CF8D
-[license-href]: https://npmjs.com/package/nuxt-fire
+[license-src]: https://img.shields.io/npm/l/nuxt3-fire.svg?style=flat&colorA=18181B&colorB=28CF8D
+[license-href]: https://npmjs.com/package/nuxt3-fire
 
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
 [nuxt-href]: https://nuxt.com
